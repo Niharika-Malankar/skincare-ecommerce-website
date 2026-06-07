@@ -1,3 +1,7 @@
+import leafIcon from "./leaf.png";
+import scienceIcon from "./science.png";
+import sparkleIcon from "./sparkle.png";
+import bunnyIcon from "./bunny.png";
 export function CollectionHeading() {
   const sectionStyle = {
     backgroundColor: "#f5f0eb",
@@ -51,6 +55,12 @@ export function CollectionHeading() {
     letterSpacing: "0.5px",
   };
 
+  const iconStyle = {
+  width: "32px",
+  height: "32px",
+  objectFit: "contain",
+};
+
   return (
     <section style={sectionStyle}>
       <div style={rowStyle}>
@@ -58,11 +68,26 @@ export function CollectionHeading() {
         <span style={labelStyle}>The Collection</span>
       </div>
       <div style={featureRowStyle}>
-        <span style={featureStyle}>🌿 Clean Ingredients</span>
-        <span style={featureStyle}>🔬 Science-Backed</span>
-        <span style={featureStyle}>✨ Natural Formulas</span>
-        <span style={featureStyle}>🐰 Cruelty Free</span>
-      </div>
+  <span style={featureStyle}>
+    <img src={leafIcon} alt="Clean Ingredients" style={iconStyle} />
+    Clean Ingredients
+  </span>
+
+  <span style={featureStyle}>
+    <img src={scienceIcon} alt="Science-Backed" style={iconStyle} />
+    Science-Backed
+  </span>
+
+  <span style={featureStyle}>
+    <img src={sparkleIcon} alt="Natural Formulas" style={iconStyle} />
+    Natural Formulas
+  </span>
+
+  <span style={featureStyle}>
+    <img src={bunnyIcon} alt="Cruelty Free" style={iconStyle} />
+    Cruelty Free
+  </span>
+</div>
       <div style={dividerStyle}></div>
     </section>
   );

@@ -1,3 +1,6 @@
+import leafIcon from "./leaf1.png";
+import scienceIcon from "./science1.png";
+import bunnyIcon from "./bunny1.png";
 export function Footer() {
   const footerStyle = {
     backgroundColor: "#3a2e2e",
@@ -97,57 +100,127 @@ export function Footer() {
     gap: "10px",
   };
 
-  const pillStyle = {
-    fontSize: "13px",
-    color: "#8a7a6a",
-    border: "1px solid #5a4a3a",
-    padding: "6px 14px",
-    borderRadius: "20px",
-    letterSpacing: "0.5px",
-  };
+ const pillStyle = {
+  fontSize: "13px",
+  color: "#8a7a6a",
+  border: "1px solid #5a4a3a",
+  padding: "6px 14px",
+  borderRadius: "20px",
+  letterSpacing: "0.5px",
+  display: "flex",
+  alignItems: "center",
+  gap: "6px",
+};
 
-  return (
-    <footer style={footerStyle}>
-      <div style={topGridStyle}>
-        <div>
-          <p style={{ fontSize: "11px", letterSpacing: "3px", color: "#9a8878", textTransform: "uppercase", margin: "0 0 4px 0" }}>Beauty in</p>
-          <h3 style={logoStyle}></h3>
-          <p style={taglineStyle}>
-            Science-engineered skincare<br />for your skin's peak performance.
+  const footerIconStyle = {
+  width: "18px",
+  height: "18px",
+  objectFit: "contain",
+};
+
+ return (
+  <footer style={footerStyle}>
+    <div style={topGridStyle}>
+      <div>
+        <p
+          style={{
+            fontSize: "11px",
+            letterSpacing: "3px",
+            color: "#9a8878",
+            textTransform: "uppercase",
+            margin: "0 0 4px 0",
+          }}
+        >
+          Beauty in
+        </p>
+
+        <h3 style={logoStyle}>LUMORA</h3>
+
+        <p style={taglineStyle}>
+          Science-engineered skincare
+          <br />
+          for your skin's peak performance.
+        </p>
+
+        <p style={{ ...colTitleStyle, marginBottom: "8px" }}>
+          Newsletter
+        </p>
+
+        <div style={newsletterInputStyle}>
+          <input
+            style={inputStyle}
+            type="email"
+            placeholder="your@email.com"
+          />
+          <button style={inputBtnStyle}>Join</button>
+        </div>
+      </div>
+
+      <div>
+        <p style={colTitleStyle}>Shop</p>
+        {["Serums", "Cleansers", "Essences", "Eye Care", "New Arrivals"].map(
+          (i) => (
+            <p key={i} style={colItemStyle}>
+              {i}
+            </p>
+          )
+        )}
+      </div>
+
+      <div>
+        <p style={colTitleStyle}>Learn</p>
+        {["Our Science", "Ingredients", "Skin Fitness", "Blog", "Reviews"].map(
+          (i) => (
+            <p key={i} style={colItemStyle}>
+              {i}
+            </p>
+          )
+        )}
+      </div>
+
+      <div>
+        <p style={colTitleStyle}>Help</p>
+        {["Account", "Orders", "Returns", "Contact Us", "FAQ"].map((i) => (
+          <p key={i} style={colItemStyle}>
+            {i}
           </p>
-          <p style={{ ...colTitleStyle, marginBottom: "8px" }}>Newsletter</p>
-          <div style={newsletterInputStyle}>
-            <input style={inputStyle} type="email" placeholder="your@email.com" />
-            <button style={inputBtnStyle}>Join</button>
-          </div>
-        </div>
-        <div>
-          <p style={colTitleStyle}>Shop</p>
-          {["Serums", "Cleansers", "Essences", "Eye Care", "New Arrivals"].map((i) => (
-            <p key={i} style={colItemStyle}>{i}</p>
-          ))}
-        </div>
-        <div>
-          <p style={colTitleStyle}>Learn</p>
-          {["Our Science", "Ingredients", "Skin Fitness", "Blog", "Reviews"].map((i) => (
-            <p key={i} style={colItemStyle}>{i}</p>
-          ))}
-        </div>
-        <div>
-          <p style={colTitleStyle}>Help</p>
-          {["Account", "Orders", "Returns", "Contact Us", "FAQ"].map((i) => (
-            <p key={i} style={colItemStyle}>{i}</p>
-          ))}
-        </div>
+        ))}
       </div>
-      <div style={bottomStyle}>
-        <p style={copyStyle}>© 2026 Lumora. All rights reserved.</p>
-        <div style={pillsStyle}>
-          <span style={pillStyle}>🌿 Clean</span>
-          <span style={pillStyle}>🔬 Science</span>
-          <span style={pillStyle}>🐰 Cruelty Free</span>
-        </div>
+    </div>
+
+    {/* Bottom Footer */}
+    <div style={bottomStyle}>
+      <p style={copyStyle}>© 2026 Lumora. All rights reserved.</p>
+
+      <div style={pillsStyle}>
+        <span style={pillStyle}>
+          <img
+            src={leafIcon}
+            alt="Clean"
+            style={footerIconStyle}
+          />
+          Clean
+        </span>
+
+        <span style={pillStyle}>
+          <img
+            src={scienceIcon}
+            alt="Science"
+            style={footerIconStyle}
+          />
+          Science
+        </span>
+
+        <span style={pillStyle}>
+          <img
+            src={bunnyIcon}
+            alt="Cruelty Free"
+            style={footerIconStyle}
+          />
+          Cruelty Free
+        </span>
       </div>
-    </footer>
-  );
+    </div>
+  </footer>
+);
 }

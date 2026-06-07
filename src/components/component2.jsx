@@ -44,7 +44,8 @@ export function HeroSection() {
     textTransform: "uppercase",
     fontFamily: "'Cormorant Garamond', Georgia, serif",
     margin: "0 0 16px 0",
-    textShadow: "0 2px 20px rgba(0,0,0,0.3)",
+    textShadow: "0 2px 20px rgba(0, 0, 0, 0.3)",
+    color: "white" 
   };
 
   const subStyle = {
