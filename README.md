@@ -19,15 +19,15 @@ A modern skincare e-commerce website built using React and Vite.
 
 ### Home Page
 
-![Home Page](./screenshots/Screenshot 2026-06-07 111253.png)
+![Home Page](./screenshots/homepage.png)
 
 ### Product Collection
 
-![Products](./screenshots/Screenshot 2026-06-07 111442.png)
+![Products](./screenshots/productcards.png)
 
 ### Footer
 
-![Footer](./screenshots/Screenshot 2026-06-07 111407.png)
+![Footer](./screenshots/footer.png)
 
 ## Author
 Niharika Malankar
