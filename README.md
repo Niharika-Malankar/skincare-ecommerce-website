@@ -7,6 +7,10 @@ A modern and elegant skincare e-commerce website built with **React** and **Vite
 
 Lumora is a front-end skincare e-commerce website that focuses on aesthetic design, responsive layouts, and user-friendly navigation. The website features a luxury skincare theme with carefully selected color palettes, custom product imagery, and elegant typography using Google Fonts.
 
+## 🔗 Live Demo
+
+[View Website](https://niharika-malankar.github.io/skincare-ecommerce-website/)
+
 ## 🚀 Features
 
 * Responsive Navigation Bar
