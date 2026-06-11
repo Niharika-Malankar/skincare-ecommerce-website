@@ -4,6 +4,7 @@ import hydraEssence from "../components/hydraEssence.jpg";
 import nutritionElixir from "../components/nutritionElixir.webp";
 import NIGHTREPAIRCREAM from "../components/NIGHTREPAIRCREAM.webp";
 import VITAMINC from "../components/VITAMINC.webp";
+import { toINR } from "../utils/currency";
 
 export const products = [
   {
