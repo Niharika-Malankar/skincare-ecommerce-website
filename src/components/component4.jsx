@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import React from "react";
 import { products } from "../data/products";
-
+import { toINR } from "../utils/currency";
 export function ProductCards() {
   const [hoveredId, setHoveredId] = React.useState(null);
 
@@ -29,6 +29,7 @@ export function ProductCards() {
       hoveredId === id
         ? "0 20px 40px rgba(0,0,0,0.15)"
         : "0 5px 15px rgba(0,0,0,0.05)",
+    cursor: "pointer",
   });
 
   const imageAreaStyle = {
@@ -77,11 +78,10 @@ export function ProductCards() {
   const buttonStyle = {
     backgroundColor: "#3a2e2e",
     color: "#f5f0eb",
-    border: "none",
     padding: "10px 18px",
-    cursor: "pointer",
     borderRadius: "4px",
     fontSize: "14px",
+    display: "inline-block",
   };
 
   return (
@@ -122,15 +122,12 @@ export function ProductCards() {
 
                 <div style={bottomRowStyle}>
                   <span style={priceStyle}>
-                    ${product.price}
+                    ₹{toINR(product.price)}
                   </span>
 
-                  <button
-                    style={buttonStyle}
-                    onClick={(e) => e.preventDefault()}
-                  >
+                  <span style={buttonStyle}>
                     View Details
-                  </button>
+                  </span>
                 </div>
               </div>
             </div>

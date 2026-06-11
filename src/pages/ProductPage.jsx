@@ -1,24 +1,37 @@
-import { useParams } from "react-router-dom";
-import { useContext } from "react";
-
+import { useParams, useNavigate } from "react-router-dom";
 import { products } from "../data/products";
-import { CartContext } from "../context/CartContext";
+import { supabase } from "../supabase";
+import { toINR } from "../utils/currency";
 
 export function ProductPage() {
   const { id } = useParams();
-
-  const { addToCart } = useContext(CartContext);
+  const navigate = useNavigate();
 
   const product = products.find(
     (item) => item.id === Number(id)
   );
 
   if (!product) {
-    return (
-      <div style={{ padding: "50px" }}>
-        <h2>Product Not Found</h2>
-      </div>
-    );
+    return <h2>Product Not Found</h2>;
+  }
+
+  async function handleAddToCart() {
+    const { error } = await supabase
+      .from("cart")
+      .insert([
+        {
+          product_id: product.id,
+        },
+      ]);
+
+    if (error) {
+      console.log(error);
+      alert("Failed to add product");
+      return;
+    }
+
+    alert(`${product.name} added to cart!`);
+    navigate("/");
   }
 
   return (
@@ -27,7 +40,6 @@ export function ProductPage() {
         padding: "60px",
         display: "flex",
         gap: "50px",
-        alignItems: "center",
         backgroundColor: "#f5f0eb",
         minHeight: "80vh",
       }}
@@ -35,28 +47,19 @@ export function ProductPage() {
       <img
         src={product.image}
         alt={product.name}
-        style={{
-          width: "400px",
-          borderRadius: "8px",
-        }}
+        style={{ width: "400px", borderRadius: "10px" }}
       />
 
       <div>
         <h1>{product.name}</h1>
+        <h2>₹{toINR(product.price)}</h2>
 
-        <h2>${product.price}</h2>
-
-        <p
-          style={{
-            maxWidth: "500px",
-            lineHeight: "1.8",
-          }}
-        >
+        <p style={{ maxWidth: "500px", lineHeight: "1.8" }}>
           {product.description}
         </p>
 
         <button
-          onClick={() => addToCart(product)}
+          onClick={handleAddToCart}
           style={{
             padding: "12px 24px",
             backgroundColor: "#3a2e2e",

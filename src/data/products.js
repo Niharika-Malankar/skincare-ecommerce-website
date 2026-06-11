@@ -2,6 +2,8 @@ import resetSerum from "../components/resetSerum.jpg";
 import cleansingFoam from "../components/cleansingFoam.webp";
 import hydraEssence from "../components/hydraEssence.jpg";
 import nutritionElixir from "../components/nutritionElixir.webp";
+import NIGHTREPAIRCREAM from "../components/NIGHTREPAIRCREAM.webp";
+import VITAMINC from "../components/VITAMINC.webp";
 
 export const products = [
   {
@@ -46,7 +48,7 @@ export const products = [
     price: 52,
     description:
       "Boosts radiance and evens skin tone.",
-    image: resetSerum,
+    image: VITAMINC,
   },
 
   {
@@ -55,6 +57,6 @@ export const products = [
     price: 60,
     description:
       "Overnight nourishment and skin repair.",
-    image: hydraEssence,
+    image: NIGHTREPAIRCREAM,
   },
 ];

@@ -6,16 +6,11 @@ export function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
 
   const addToCart = (product) => {
-    setCart((prev) => [...prev, product]);
+    setCart((prevCart) => [...prevCart, product]);
   };
 
   return (
-    <CartContext.Provider
-      value={{
-        cart,
-        addToCart,
-      }}
-    >
+    <CartContext.Provider value={{ cart, addToCart }}>
       {children}
     </CartContext.Provider>
   );
