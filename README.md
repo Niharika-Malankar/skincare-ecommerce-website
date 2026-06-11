@@ -41,6 +41,7 @@ The project simulates a real-world skincare shopping platform with product brows
 
 ## 📂 Project Structure
 
+```text
 src/
 ├── components/
 │   ├── Navbar.jsx
@@ -59,6 +60,7 @@ src/
 ├── supabase.js
 ├── App.jsx
 └── main.jsx
+```
 
 ## Screenshots
 
