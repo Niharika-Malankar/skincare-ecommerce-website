@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export function Navbar() {
   const navStyle = {
     display: "flex",
@@ -60,17 +62,50 @@ export function Navbar() {
   return (
     <nav style={navStyle}>
       <ul style={leftLinksStyle}>
-        <li><a href="#" style={linkStyle}>Science</a></li>
-        <li><a href="#" style={linkStyle}>Us</a></li>
-        <li><a href="#" style={linkStyle}>Shop</a></li>
+        <li>
+          <Link to="/" style={linkStyle}>
+            Science
+          </Link>
+        </li>
+
+        <li>
+          <Link to="/" style={linkStyle}>
+            Us
+          </Link>
+        </li>
+
+        <li>
+          <Link to="/" style={linkStyle}>
+            Shop
+          </Link>
+        </li>
       </ul>
+
       <div style={{ textAlign: "center" }}>
         <span style={logoSubStyle}>The Science of</span>
-        <h1 style={logoStyle}>LUMORA</h1>
+
+        <Link
+          to="/"
+          style={{
+            textDecoration: "none",
+          }}
+        >
+          <h1 style={logoStyle}>LUMORA</h1>
+        </Link>
       </div>
+
       <ul style={rightLinksStyle}>
-        <li><a href="#" style={linkStyle}>Account</a></li>
-        <li><a href="#" style={linkStyle}>Shopping Cart</a></li>
+        <li>
+          <Link to="/" style={linkStyle}>
+            Account
+          </Link>
+        </li>
+
+        <li>
+          <Link to="/" style={linkStyle}>
+            Shopping Cart
+          </Link>
+        </li>
       </ul>
     </nav>
   );

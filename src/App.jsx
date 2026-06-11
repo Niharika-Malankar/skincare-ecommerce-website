@@ -1,19 +1,23 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import { Navbar } from "./components/Navbar";
-import { HeroSection } from "./components/component2";
-import { CollectionHeading } from "./components/component3";
-import { ProductCards } from "./components/component4";
 import { Footer } from "./components/component5";
 
+import { Home } from "./pages/Home";
+import { ProductPage } from "./pages/ProductPage";
 
 function App() {
   return (
-    <>
-      <Navbar/>
-      <HeroSection/>
-      <CollectionHeading/>
-      <ProductCards/>
-      <Footer/>
-    </>
+    <BrowserRouter>
+      <Navbar />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/product/:id" element={<ProductPage />} />
+      </Routes>
+
+      <Footer />
+    </BrowserRouter>
   );
 }
 
