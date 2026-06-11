@@ -3,7 +3,6 @@ import { toINR } from "../utils/currency";
 import { HeroSection } from "../components/component2";
 import { CollectionHeading } from "../components/component3";
 import { ProductCards } from "../components/component4";
-
 import { supabase } from "../supabase";
 import { products } from "../data/products";
 
@@ -46,10 +45,9 @@ export function Home() {
           backgroundColor: "#f5f0eb",
           padding: "40px",
           textAlign: "left",
-        }}
-      >
+        }}>
         <h2 style={{ marginBottom: "25px", color: "#3a2e2e" }}>
-          Your Cart
+          My Cart
         </h2>
 
         {cartProducts.length === 0 ? (

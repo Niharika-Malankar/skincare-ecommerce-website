@@ -21,7 +21,7 @@ export function CartSection() {
           color: "#3a2e2e",
         }}
       >
-        Your Cart
+        My Cart
       </h2>
 
       <div
@@ -52,7 +52,7 @@ export function CartSection() {
 
             <h3>{item.name}</h3>
 
-            <p>${item.price}</p>
+            <p>₹{toINR(item.price)}</p>
           </div>
         ))}
       </div>
